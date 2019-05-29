@@ -4,7 +4,6 @@
 <head>
 <meta content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<script src="https://cdn.ckeditor.com/ckeditor5/12.1.0/classic/ckeditor.js"></script>
 </head>
 <style>
 body {font-family: Arial, Helvetica, sans-serif;}
@@ -43,7 +42,6 @@ input[type=button]:hover {
 </head>
 <body>
 
-<h3>Contact Form</h3>
 
 <div class="container">
   <form>
@@ -51,18 +49,9 @@ input[type=button]:hover {
     <input type="text" id="title" name="title" placeholder="title">
 
     <label>내용입력</label>
-	   	<textarea name="content" id="editor" style="height:200px">
-	        &lt;p&gt;This is some sample content.&lt;/p&gt;
-	    </textarea>
-    <script>
-        ClassicEditor
-            .create( document.querySelector( '#editor' ) )
-            .catch( error => {
-                console.error( error );
-            } );
-    </script>
-    	<!-- <textarea id="subject" name="subject"  style="height:200px"></textarea> -->
+    <textarea id="subject" name="subject"  style="height:200px"></textarea>
     <input type="button" value="글쓰기">
+    <input type="button" value="사진추가">
 
   </form>
 </div>

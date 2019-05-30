@@ -8,7 +8,7 @@
 	</listener>
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>classpath:com/BlogProject/spring/context/service.xml</param-value>
+		<param-value>classpath:com/javablog/spring/context/service.xml</param-value>
 	</context-param>
 	
 	<!-- filter 등록 -->
@@ -63,5 +63,5 @@
 		<url-pattern>/rest</url-pattern>
 	</servlet-mapping>
 	
-	
 </web-app>
+

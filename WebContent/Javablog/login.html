@@ -69,41 +69,44 @@ a {
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
-/*
+
 $(function(){
 	$("button").click(function(){
 		loginCheck();
 	});
 });
-*/
-//서버에 아이디/패스워드를 비동기로 정송하여 결과를 받아와 알맞은 처리하자!!
-/* function loginCheck(){
+
+function loginCheck(){
+	//서버에 아이디/패스워드를 비동기로 전송하여 결과를 받아와 알맞은 처리하자!!
+//	alert("id="+$("form :input[name='id']").val()+", pass="+$("form :input[name='pass']").val());
 	$.ajax({
-		url:"/admin/login",
-		type:"post",
+		url:"/rest/admin/login",
+		type:"get",
 		data:{
 			id:$("form :input[name='id']").val(),
 			pass:$("form :input[name='pass']").val()
 		},
 		success:function(result){
-			//var json=JSON.parse(result);//문자열을 json 객체화
-			if(result.resultCode==1){
-				//location.href="/admin/main.jsp";
-			}else if(result.resultCode	==0){
-				alert("올바르지 않은 정보입니다");
+			var json=JSON.parse(result);//문자열을 json 객체화
+			if(json==1){
+				location.href="/main";
+			}else if(json==0){
+				alert("Id와 비밀번호를 확인해주세요");
 			}
 		},
 		error:function(result){
 			
 		}
 	});  
+	
+	/*
 	$("form").attr({
 		method:"get",
 		action:"/admin/login"		
 	});
 	$("form").submit();
-	
-} */
+	*/
+} 
 </script>
 </head>
 <body>
@@ -118,6 +121,6 @@ $(function(){
 
 		</div>
 	</form>
-	<button class="registerbtn">Login</button>
+	<button type="button" class="registerbtn">Login</button>
 </body>
 </html>

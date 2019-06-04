@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <script src="https://cdn.ckeditor.com/ckeditor5/12.1.0/classic/ckeditor.js"></script>
-</head>
 <style>
 body {font-family: Arial, Helvetica, sans-serif;}
 * {box-sizing: border-box;}
@@ -40,6 +40,7 @@ input[type=button]:hover {
   padding: 20px;
 }
 </style>
+
 </head>
 <body>
 
@@ -49,19 +50,19 @@ input[type=button]:hover {
   <form>
     <label>제목 입력</label>
     <input type="text" id="title" name="title" placeholder="title">
-
-
     <label>내용입력</label>
 	   	<textarea name="content" id="editor" style="height:200px">
 	        &lt;p&gt;This is some sample content.&lt;/p&gt;
 	    </textarea>
-    <script>
+	    
+	<script>
         ClassicEditor
             .create( document.querySelector( '#editor' ) )
             .catch( error => {
                 console.error( error );
             } );
     </script>
+   
     	<!-- <textarea id="subject" name="subject"  style="height:200px"></textarea> -->
 
     <input type="button" value="글쓰기">

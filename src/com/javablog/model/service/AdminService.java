@@ -1,8 +1,8 @@
-package com.javablog.model.repository;
+package com.javablog.model.service;
 
 import com.javablog.model.domain.Admin;
 
-public interface AdminDAO {
+public interface AdminService {
 	
 	public Admin login(Admin admin);
 }

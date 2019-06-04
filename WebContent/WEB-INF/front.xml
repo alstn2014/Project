@@ -21,6 +21,8 @@
 	p:prefix="/"
 	p:suffix=".jsp"/>
 	
+	<mvc:default-servlet-handler/>
+	
 	<!-- 글자 인코딩 -->
 	<mvc:annotation-driven>
 		<mvc:message-converters>
@@ -31,6 +33,13 @@
 					</list>
 				</property>
 			</bean>
+			<bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+				<property name="supportedMediaTypes">
+					<list>
+                    	<value>application/json; charset=UTF-8</value>
+                    </list>
+                </property>
+            </bean>
 		</mvc:message-converters>
 	</mvc:annotation-driven>
 	

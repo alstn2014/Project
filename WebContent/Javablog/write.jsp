@@ -62,7 +62,16 @@ input[type=button]:hover {
                 console.error( error );
             } );
     </script>
-   
+   <!-- https://ckeditor.com/docs/ckeditor5/latest/framework/guides/deep-dive/upload-adapter.html
+   			https://ckeditor.com/docs/ckeditor5/latest/builds/guides/integration/saving-data.html
+			https://ckeditor.com/docs/ckeditor5/latest/framework/guides/deep-dive/upload-adapter.html
+			
+			
+			https://huskdoll.tistory.com/121
+			https://pkbad.tistory.com/28
+			https://lalwr.blogspot.com/2018/09/ckeditor-spring.html
+			https://zzznara2.tistory.com/443
+    -->
     	<!-- <textarea id="subject" name="subject"  style="height:200px"></textarea> -->
 
     <input type="button" value="글쓰기">

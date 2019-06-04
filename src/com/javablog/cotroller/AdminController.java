@@ -23,6 +23,6 @@ public class AdminController {
 	
 	@RequestMapping(value="/admin/logout")
 	public String logout() {
-		return "javablog/logout";
+		return " javablog/logout";
 	}
 }

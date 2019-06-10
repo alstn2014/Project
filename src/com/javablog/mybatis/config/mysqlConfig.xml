@@ -5,8 +5,10 @@
 <configuration>
   <typeAliases>
   	<typeAlias type="com.javablog.model.domain.Admin" alias="Admin"/>
+  	<typeAlias type="com.javablog.model.domain.Write" alias="Write"/>
   </typeAliases>
   <mappers>
     <mapper resource="com/javablog/mybatis/mapper/AdminMapper.xml"/>
+    
   </mappers>
 </configuration>

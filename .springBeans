@@ -11,6 +11,7 @@
 		<config>WebContent/WEB-INF/rest.xml</config>
 	</configs>
 	<autoconfigs>
+		<config>src/com/javablog/spring/context/service.xml</config>
 	</autoconfigs>
 	<configSets>
 	</configSets>

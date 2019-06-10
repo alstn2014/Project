@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Write">
+	
+	<insert id="insert" parameterType="Write">
+		insert into board(board_id,title,writer,content,regdate,hit,img_no)
+	</insert>
+ 
+</mapper>

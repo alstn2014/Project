@@ -1,6 +1,6 @@
 package com.javablog.model.domain;
 	
-public class Write {
+public class Board {
 	private int board_id;
 	private String title;
 	private String writer;

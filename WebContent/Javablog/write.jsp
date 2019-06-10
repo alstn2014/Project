@@ -1,5 +1,9 @@
+<%@page import="com.javablog.model.domain.Board"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%
+	Board write = new Board();
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -52,6 +56,7 @@ input[type=button]:hover {
     <input type="text" id="title" name="title" placeholder="title">
     <label>내용입력</label>
 	   	<textarea name="content" id="editor" style="height:200px">
+	   		
 	    </textarea>
 	    
 	

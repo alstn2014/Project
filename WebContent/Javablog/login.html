@@ -89,7 +89,7 @@ function loginCheck(){
 		success:function(result){
 			var json=JSON.parse(result);//문자열을 json 객체화
 			if(json==1){
-				location.href="/main";
+				location.href="/";
 			}else if(json==0){
 				alert("Id와 비밀번호를 확인해주세요");
 			}

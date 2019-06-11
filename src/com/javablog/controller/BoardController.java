@@ -20,8 +20,8 @@ public class BoardController{
 
    @Autowired
    private BoardService boardService;
-   @Autowired
-   private Pager pager;
+   
+   private Pager pager=new Pager();
  
  //게시물 목록보기
    @RequestMapping(value="/admin/board/list", method=RequestMethod.GET)

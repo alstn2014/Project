@@ -1,11 +1,22 @@
+<%@page import="com.javablog.model.domain.Admin"%>
+<%@page import="com.javablog.model.domain.Board"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%
+	Admin admin= (Admin)request.getSession().getAttribute("admin");
+	Board board = new Board();
+%>
+
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <script src="https://cdn.ckeditor.com/ckeditor5/12.1.0/classic/ckeditor.js"></script>
+<script>
+
+</script>
 <style>
 body {font-family: Arial, Helvetica, sans-serif;}
 * {box-sizing: border-box;}
@@ -52,17 +63,20 @@ input[type=button]:hover {
     <input type="text" id="title" name="title" placeholder="title">
     <label>내용입력</label>
 	   	<textarea name="content" id="editor" style="height:200px">
-	        &lt;p&gt;This is some sample content.&lt;/p&gt;
+	   		
 	    </textarea>
 	    
-	<script>
-        ClassicEditor
-            .create( document.querySelector( '#editor' ) )
-            .catch( error => {
-                console.error( error );
-            } );
-    </script>
-   
+	
+   <!-- https://ckeditor.com/docs/ckeditor5/latest/framework/guides/deep-dive/upload-adapter.html
+   			https://ckeditor.com/docs/ckeditor5/latest/builds/guides/integration/saving-data.html
+			https://ckeditor.com/docs/ckeditor5/latest/framework/guides/deep-dive/upload-adapter.html
+			
+			
+			https://huskdoll.tistory.com/121
+			https://pkbad.tistory.com/28
+			https://lalwr.blogspot.com/2018/09/ckeditor-spring.html
+			https://zzznara2.tistory.com/443
+    -->
     	<!-- <textarea id="subject" name="subject"  style="height:200px"></textarea> -->
 
     <input type="button" value="글쓰기">

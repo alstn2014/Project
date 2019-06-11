@@ -1,3 +1,5 @@
+<%@page import="com.javablog.model.domain.Admin"%>
+<%@page contentType="text/html; charset=utf-8" %>
 <!DOCTYPE HTML>
 <html lang="en-US">
     <head>
@@ -28,7 +30,10 @@
 
 <script>
 function login(){
-	location.href="/Javablog/login.html";
+	location.href="/Javablog/login.jsp";
+}
+function logout(){
+	location.href="/admin/logout";
 }
 </script>
 
@@ -45,57 +50,9 @@ function login(){
             </tbody>
         </table>
 
-        <!-- Left Sidebar -->
-        <div id="sidebar" class="sidebar">
-			<div class="menu-left-part">
-		
-				<div class="search-holder">
-					<label>
-						<input type="search" class="search-field" placeholder="검색어를 입력하세요..." value="" name="s" title="Search for:">
-					</label>
-				</div>
-				<div class="site-info-holder">
-					<h1 class="site-title">Java Blog</h1>
-					<p class="site-description">
-						자바 블로그는 친절한 글과 이미지를 결합하여 개발의 초보자에게도 쉽게 설명합니다.
-					</p>
-				</div>
-				<nav id="header-main-menu">
-					<ul class="main-menu sm sm-clean">
-						<li><a href="/Javablog/list.html" class="current">JavaScript</a></li>
-						<li><a href="/Javablog/list.html">JavaEE</a></li>
-						<li><a href="/Javablog/list.html">JavaSE</a></li>
-						<li><a href="/Javablog/list.html">HTML/CSS</a></li>
-						<li><a href="/Javablog/list.html">개발환경</a></li>
-						<li>.</li>
-						<li>.</li>
-						<li>.</li>
-						<li>.</li>
-						<li>.</li>
-						<li>.</li>
-						<li>.</li>
-						<li><button class="w3-button w3-border w3-hover-black" onClick="login()">관리자 로그인</button></li>
-					</ul>
-				</nav>
-			</div>
-
-			<div class="menu-right-part">
-				<div class="logo-holder">
-					<a href="index.html">
-						<img src="/Javablog/images/logo.png" alt="Suppablog WP">
-					</a>
-				</div>
-				<div class="toggle-holder">
-					<div id="toggle">
-						<div class="menu-line"></div>
-					</div>
-				</div>
-				
-				<div class="fixed scroll-top"><i class="fa fa-caret-square-o-up" aria-hidden="true"></i></div>
-			</div>
-
-			<div class="clear"></div>
-		</div>
+        <!-- Left Sidebar 사이드바 안에 admin 보유중 -->
+        <%@include file="/Javablog/include/leftsidebar.jsp" %>
+        <!-- Left Sidebar end -->
 
         <!-- Home Content -->
         <div id="content" class="site-content">

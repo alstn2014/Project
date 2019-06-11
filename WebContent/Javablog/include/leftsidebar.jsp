@@ -52,8 +52,8 @@
 
 	<div class="menu-right-part">
 		<div class="logo-holder">
-			<a href="/index.jsp"> <img src="/Javablog/images/logo.png"
-				alt="Suppablog WP">
+			<a href="/index.jsp"> 
+				<img src="/Javablog/images/logo.png"	alt="Suppablog WP">
 			</a>
 		</div>
 		<div class="toggle-holder">

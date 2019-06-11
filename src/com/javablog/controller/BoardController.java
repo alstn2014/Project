@@ -1,13 +1,17 @@
-package com.javablog.cotroller;
+package com.javablog.controller;
 
 import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.javablog.commons.Pager;
 import com.javablog.model.domain.Board;
 import com.javablog.model.service.BoardService;
 
@@ -16,14 +20,17 @@ public class BoardController{
 
    @Autowired
    private BoardService boardService;
+   
+   private Pager pager=new Pager();
  
  //게시물 목록보기
    @RequestMapping(value="/admin/board/list", method=RequestMethod.GET)
-   public ModelAndView showBoardList() {
+   public ModelAndView showBoardList(@RequestParam(value="currentPage", defaultValue="1" , required=false) int currentPage, HttpServletRequest request) {
       List boardList=boardService.selectAll();
-      ModelAndView mav=new ModelAndView();
-      mav.setViewName("admin/board/list");
+      ModelAndView mav=new ModelAndView("admin/board/list");
+      pager.init(request, boardList.size());
       mav.addObject("boardList", boardList);
+      mav.addObject("pager", pager);
       return mav;
    }      
 
@@ -59,4 +66,14 @@ public class BoardController{
      return "redirect:/admin/board/list";
    }
 
+
 }
+
+
+
+
+
+
+
+
+

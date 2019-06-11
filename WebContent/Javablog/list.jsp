@@ -1,7 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
-<!DOCTYPE html>
-<html>
+<%@page import="com.javablog.model.domain.Board"%>
+<%@page import="java.util.List"%>
+<%@page import="com.javablog.commons.Pager"%>
+<%@ page contentType="text/html; charset=UTF-8"%>
+<%
+	Pager pager=(Pager)request.getAttribute("pager");   
+	List<Board> boardList = (List)request.getAttribute("boardList");
+%>
+<!DOCTYPE HTML>
+<html lang="en-US">
 <head>
 	<title>Javablog - Minimal Java Blog</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -53,8 +59,48 @@ function loadSingle(){
         </table>
 
         <!-- Left Sidebar -->
-		<%@include file="/Javablog/include/leftsidebar.jsp"%>
-		
+        <div id="sidebar" class="sidebar">
+			<div class="menu-left-part">
+				<div class="search-holder">
+					<label>
+						<input type="search" class="search-field" placeholder="검색어를 입력하세요..." value="" name="s" title="Search for:">
+					</label>
+				</div>
+				<div class="site-info-holder">
+					<h1 class="site-title">Java Blog</h1>
+					<p class="site-description">
+						자바 블로그는 친절한 글과 이미지를 결합하여 개발의 초보자에게도 쉽게 설명합니다.
+					</p>
+				</div>
+				<nav id="header-main-menu">
+					<ul class="main-menu sm sm-clean">
+						<li><a href="/admin/board/list" class="current">JavaScript</a></li>
+						<li><a href="/admin/board/list">JavaEE</a></li>
+						<li><a href="/admin/board/list">JavaSE</a></li>
+						<li><a href="/admin/board/list">HTML/CSS</a></li>
+						<li><a href="/admin/board/list">개발환경</a></li>
+					</ul>
+				</nav>
+			</div>
+
+			<div class="menu-right-part">
+				<div class="logo-holder">
+					<a href="/">
+						<img src="/Javablog/images/logo.png" alt="Suppablog WP">
+					</a>
+				</div>
+				<div class="toggle-holder">
+					<div id="toggle">
+						<div class="menu-line"></div>
+					</div>
+				</div>
+				
+				<div class="fixed scroll-top"><i class="fa fa-caret-square-o-up" aria-hidden="true"></i></div>
+			</div>
+
+			<div class="clear"></div>
+		</div>
+
         <!-- Single Content -->
         <div id="content" class="site-content center-relative">
             <div class="single-post-wrapper content-1070 center-relative">
@@ -73,21 +119,37 @@ function loadSingle(){
 								<th>등록일</th>
 							  </tr>
 							</thead>
-							<tr onClick="loadSingle()">
-							  <td>[javaEE]</td>
-							  <td>Thread의 기초</td>
-							  <td>2019.06.03</td>
-							</tr>
-							<tr onClick="loadSingle()">
-							  <td>[javaEE]</td>
-							  <td>JNDI의 기초</td>
-							  <td>2019.06.02</td>
-							</tr>
-							<tr onClick="loadSingle()">
-							  <td>[javaEE]</td>
-							  <td>URI와 URL의 차이</td>
-							  <td>2019.06.01</td>
-							</tr>
+							 <%int num=pager.getNum(); %>
+   							 <%int curPos=pager.getCurPos(); %>
+   							 <%for(int i=0;i<pager.getPageSize();i++){ %>
+   							    <%if(num<1)break; %>
+   							    <%Board board=boardList.get(curPos++); %>
+								<tr onClick="loadSingle()">
+								  <td><%=num-- %></td>
+								  <td><%=board.getTitle() %></td>
+								  <td><%=board.getRegdate() %></td>
+								</tr>
+							<%} %>
+							<tr>
+						         <td colspan="3" align="center">
+						         <%if(pager.getFirstPage()-1>0){ %>
+						                 <a href="/admin/board/list?currentPage=<%=pager.getFirstPage()-1%>">◀</a>
+						              <%}else{ %>
+						                 <a href="javascript:alert('첫번째 페이지입니다');">◀</a>
+						              <%} %>
+						                        
+						         <%for(int i=pager.getFirstPage();i<pager.getLastPage();i++){%>
+						         <%if(i>pager.getTotalPage())break; %>
+						         <a href="/admin/board/list?currentPage=<%=i %>">[<%=i %>]</a>                 
+						         <%} %>
+						            
+						         <%if(pager.getLastPage()+1<pager.getTotalPage()){ %>
+						                 <a href="/admin/board/list?currentPage=<%=pager.getLastPage()+1%>">▶</a>
+						              <%}else{ %>
+						                 <a href="javascript:alert('마지막 페이지입니다!');">▶</a>
+						              <%} %>
+						         </td>
+						    </tr>
 							<tr>
 								<td colspan="3">
 									<button type="button" class="btn btn-secondary">글등록</button>

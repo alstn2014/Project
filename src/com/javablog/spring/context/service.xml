@@ -24,6 +24,7 @@
 	<bean id="factoryBean" class="org.mybatis.spring.SqlSessionFactoryBean"
 	p:dataSource-ref="dataSource"
 	p:configLocation="classpath:com/javablog/mybatis/config/mysqlConfig.xml"/>
+	
 	<bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg ref="factoryBean"/>
 	</bean>

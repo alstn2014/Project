@@ -7,8 +7,8 @@
 	<sql id="select_sql">select board_id,title,writer,content,regdate,img_no from board</sql>
 	
 	<insert id="insert" parameterType="Board">
-		insert into board(board_id,title,writer,content,regdate,img_no)
-		values(#{board_id},#{title},#{writer},#{content},#{regdate},#{img_no})
+		insert into board(board_id,title,writer,content,img_no)
+		values(#{board_id},#{title},#{writer},#{content},#{img_no})
 	</insert>
 	
 	<select id="selectAll" resultType="Board">

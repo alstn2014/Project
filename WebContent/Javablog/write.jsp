@@ -14,8 +14,20 @@
 <meta content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <script src="https://cdn.ckeditor.com/ckeditor5/12.1.0/classic/ckeditor.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 <script>
-
+$(function(){
+	   $($("input[type='button']")[0]).click(function(){
+	      regist();
+	   });
+	});
+	function regist(){
+	   $("form").attr({
+	      method:"post",
+	      action:"/admin/board/write"
+	   });
+	   $("form").submit();
+	}
 </script>
 <style>
 body {font-family: Arial, Helvetica, sans-serif;}
@@ -62,7 +74,7 @@ input[type=button]:hover {
     <label>제목 입력</label>
     <input type="text" id="title" name="title" placeholder="title">
     <label>내용입력</label>
-	   	<textarea name="content" id="editor" style="height:200px">
+	   	<textarea  id="editor" name="content" style="height:200px">
 	   		
 	    </textarea>
 	    

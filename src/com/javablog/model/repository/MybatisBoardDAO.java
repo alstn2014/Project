@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import com.javablog.model.domain.Board;
 
 @Repository
-public class MybatisBoardDAO {
+public class MybatisBoardDAO implements BoardDAO{
 	
 	@Autowired
 	SqlSessionTemplate sessionTemplate;

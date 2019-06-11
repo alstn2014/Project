@@ -1,15 +1,22 @@
+<%@page import="com.javablog.model.domain.Admin"%>
 <%@page import="com.javablog.model.domain.Board"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <%
-	Board write = new Board();
+	Admin admin= (Admin)request.getSession().getAttribute("admin");
+	Board board = new Board();
 %>
+
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <script src="https://cdn.ckeditor.com/ckeditor5/12.1.0/classic/ckeditor.js"></script>
+<script>
+
+</script>
 <style>
 body {font-family: Arial, Helvetica, sans-serif;}
 * {box-sizing: border-box;}

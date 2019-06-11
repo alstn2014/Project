@@ -53,7 +53,7 @@ public class BoardController{
    }
    
   //게시물 작성
-   @RequestMapping(value="/admin/board/regist", method=RequestMethod.POST)
+   @RequestMapping(value="/admin/board/write", method=RequestMethod.POST)
    public String regist(Board board) {
       boardService.insert(board);
      return "redirect:/admin/board/list";

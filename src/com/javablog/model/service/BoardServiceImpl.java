@@ -1,10 +1,13 @@
-package com.aroundog.model.service;
+package com.javablog.model.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.javablog.exception.DeleteFailException;
+import com.javablog.exception.EditFailException;
+import com.javablog.exception.RegistFailException;
 import com.javablog.model.domain.Board;
 import com.javablog.model.repository.BoardDAO;
 

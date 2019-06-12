@@ -41,13 +41,16 @@
 
 </head>
 <script>
-function loadSingle(){
-	location.href="/Javablog/single.jsp";
+
+function goDetail(board_id){
+	location.href="/admin/board/detail?board_id="+board_id;
 }
+
+
 </script>
 
     <body class="single-post">
-
+	
         <!-- Preloader Gif -->
         <table class="doc-loader">
             <tbody>
@@ -72,7 +75,6 @@ function loadSingle(){
                     <div class="entry-content">
 						<div class="w3-container">
 						  <h2>글목록</h2>
-
 						  <table class="w3-table-all w3-hoverable">
 							<thead>
 							  <tr class="w3-light-grey">
@@ -86,7 +88,7 @@ function loadSingle(){
    							 <%for(int i=0;i<pager.getPageSize();i++){ %>
    							    <%if(num<1)break; %>
    							    <%Board board=boardList.get(curPos++); %>
-								<tr onClick="loadSingle()">
+								<tr onClick="goDetail(<%=board.getBoard_id() %>)">
 								  <td><%=num-- %></td>
 								  <td><%=board.getTitle() %></td>
 								  <td><%=board.getRegdate().substring(0, 10) %></td>
@@ -114,7 +116,7 @@ function loadSingle(){
 						    </tr>
 							<tr>
 								<td colspan="3">
-									<button type="button" class="btn btn-secondary">글등록</button>
+									<button type="button" class="btn btn-secondary" onClick="goRegist()">글등록</button>
 								</td>
 							</tr>
 						  </table>
@@ -132,7 +134,7 @@ function loadSingle(){
 
         <!--Load JavaScript-->
         <%@include file="/Javablog/include/javascript.jsp"%>
-        
+       
     </body>
 </html>
 

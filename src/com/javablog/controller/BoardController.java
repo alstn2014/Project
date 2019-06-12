@@ -61,12 +61,12 @@ public class BoardController{
       boardService.delete(board_id);
       return "redirect:/admin/board/list";
    }
-   
-  //게시물 작성
+ 
+   //게시물 1건 등록
    @RequestMapping(value="/admin/board/write", method=RequestMethod.POST)
    public String regist(Board board) {
-      boardService.insert(board);
-     return "redirect:/admin/board/list";
+	   boardService.insert(board);
+	   return "redirect:/admin/board/list";
    }
 }
 

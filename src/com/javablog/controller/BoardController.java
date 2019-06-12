@@ -76,6 +76,12 @@ public class BoardController{
 		mav.setViewName("Javablog/write");
 		return mav;	
 	}
+   @RequestMapping(value="/main",method=RequestMethod.GET)
+	public ModelAndView mainPage(HttpServletRequest request) {
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("index");
+		return mav;	
+	}
 }
 
 

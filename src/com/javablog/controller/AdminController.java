@@ -26,6 +26,7 @@ public class AdminController {
 	public String goMain(HttpServletRequest request) {
 		System.out.println("AdminController>> goMain Á¢¼Ó"); 
 		List boardList=boardService.selectAll();
+		System.out.println(boardList.size()); 
 		request.getSession().setAttribute("boardList", boardList);
 		return "index";
 	}

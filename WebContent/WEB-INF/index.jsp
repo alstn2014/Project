@@ -4,7 +4,7 @@
 <%@page import="com.javablog.model.domain.Admin"%>
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%
-	List<Board> boardList=(List)request.getAttribute("boardList");
+	List<Board> boardList=(List)request.getSession().getAttribute("boardList");
 %>
 
 <!DOCTYPE HTML>
@@ -59,7 +59,7 @@
                                     <a href="/admin/board/detail?board_id=<%=boardList.get(0).getBoard_id()%>"><%=boardList.get(0).getTitle() %></a>
                                 </h2>
                                 <div class="excerpt">
-                                	<%=boardList.get(0).getContent().substring(0, 50) %>
+                                	<%=boardList.get(0).getContent() %>
                                    <a class="read-more" href="/admin/board/detail?board_id=<%=boardList.get(0).getBoard_id()%>"></a>
                                 </div>
                                 <%} %>

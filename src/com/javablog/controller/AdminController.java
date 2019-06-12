@@ -20,11 +20,17 @@ public class AdminController {
 	@RequestMapping(value="/")
 	public String goMain(HttpServletRequest request) {
 		System.out.println("AdminController>> goMain Á¢¼Ó"); 
-		return "index2";
+		return "index";
+	}
+	
+	@RequestMapping(value="/admin/login")
+	public String login() {
+		return "Javablog/login";
 	}
 	
 	@RequestMapping(value="/admin/logout")
 	public String logout() {
 		return "Javablog/logout";
 	}
+	
 }

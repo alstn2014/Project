@@ -41,23 +41,12 @@
 
 </head>
 <script>
-function loadSingle(){
-	location.href="/Javablog/single.jsp";
-}
+
 </script>
 
     <body class="single-post">
 
-        <!-- Preloader Gif -->
-        <table class="doc-loader">
-            <tbody>
-                <tr>
-                    <td>
-                        <img src="/Javablog/images/ajax-document-loader.gif" alt="Loading...">
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        
 		
 		<!-- Left Sidebar 사이드바 안에 admin 보유중 -->
        <%@include file="/Javablog/include/leftsidebar.jsp" %>
@@ -112,11 +101,13 @@ function loadSingle(){
 						              <%} %>
 						         </td>
 						    </tr>
+							<%if(admin!=null){ %>
 							<tr>
 								<td colspan="3">
 									<button type="button" class="btn btn-secondary">글등록</button>
 								</td>
 							</tr>
+							<%} %>
 						  </table>
 						</div>
                     </div>

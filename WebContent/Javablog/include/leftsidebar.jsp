@@ -6,6 +6,26 @@
 %>
 
 <meta charset="UTF-8">
+
+<script>
+function login(){
+	location.href="/admin/login";
+}
+function logout(){
+	location.href="/admin/logout";
+}
+</script>
+
+<!-- Preloader Gif -->
+<table class="doc-loader">
+	<tbody>
+		<tr>
+			<td><img src="/Javablog/images/ajax-document-loader.gif"
+				alt="Loading..."></td>
+		</tr>
+	</tbody>
+</table>
+
 <div id="sidebar" class="sidebar">
 	<div class="menu-left-part">
 
@@ -16,7 +36,8 @@
 		</div>
 		<div class="site-info-holder">
 			<h1 class="site-title">Java Blog</h1>
-			<p class="site-description">자바 블로그는 친절한 글과 이미지를 결합하여 개발의 초보자에게도 쉽게 설명합니다.</p>
+			<p class="site-description">자바 블로그는 친절한 글과 이미지를 결합하여 개발의 초보자에게도
+				쉽게 설명합니다.</p>
 		</div>
 		<nav id="header-main-menu">
 			<ul class="main-menu sm sm-clean">
@@ -51,8 +72,8 @@
 
 	<div class="menu-right-part">
 		<div class="logo-holder">
-			<a href="/index.jsp"> 
-				<img src="/Javablog/images/logo.png"	alt="Suppablog WP">
+			<a href="/index.jsp"> <img src="/Javablog/images/logo.png"
+				alt="Suppablog WP">
 			</a>
 		</div>
 		<div class="toggle-holder">

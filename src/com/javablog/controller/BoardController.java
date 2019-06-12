@@ -27,7 +27,7 @@ public class BoardController{
    @RequestMapping(value="/admin/board/list", method=RequestMethod.GET)
    public ModelAndView showBoardList(@RequestParam(value="currentPage", defaultValue="1" , required=false) int currentPage, HttpServletRequest request) {
       List boardList=boardService.selectAll();
-      ModelAndView mav=new ModelAndView("admin/board/list");
+      ModelAndView mav=new ModelAndView("Javablog/list");
       pager.init(request, boardList.size());
       mav.addObject("boardList", boardList);
       mav.addObject("pager", pager);

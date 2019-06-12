@@ -1,5 +1,5 @@
 <%@page import="com.javablog.model.domain.Admin"%>
-<%@page contentType="text/html; charset=utf-8" %>
+<%@ page contentType="text/html; charset=UTF-8"%>
 <!DOCTYPE HTML>
 <html lang="en-US">
     <head>

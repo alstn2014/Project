@@ -27,22 +27,23 @@ public class BoardController{
    @RequestMapping(value="/admin/board/list", method=RequestMethod.GET)
    public ModelAndView showBoardList(@RequestParam(value="currentPage", defaultValue="1" , required=false) int currentPage, HttpServletRequest request) {
       List boardList=boardService.selectAll();
-      ModelAndView mav=new ModelAndView("admin/board/list");
+      ModelAndView mav=new ModelAndView("Javablog/list");
       pager.init(request, boardList.size());
       mav.addObject("boardList", boardList);
       mav.addObject("pager", pager);
       return mav;
    }      
 
-    //게시물 1건 상세보기
+ //게시물 1건 상세보기
    @RequestMapping(value="/admin/board/detail", method=RequestMethod.GET)
    public ModelAndView detail(int board_id) {
+     System.out.println("넘겨준 board_id "+board_id);
       Board board=boardService.select(board_id);
       ModelAndView mav=new ModelAndView();
-      mav.setViewName("admin/board/detail");
+      mav.setViewName("Javablog/detail");
       mav.addObject("board", board);
       return mav;
-   }      
+   }            
    //게시물 수정
    @RequestMapping(value="/admin/board/edit", method=RequestMethod.POST)
    public ModelAndView edit(Board board) {

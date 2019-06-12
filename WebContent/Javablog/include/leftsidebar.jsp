@@ -21,7 +21,7 @@
 		</div>
 		<nav id="header-main-menu">
 			<ul class="main-menu sm sm-clean">
-				<li><a href="/Javablog/list.jsp" class="current">JavaScript</a></li>
+				<li><a href="/admin/board/list" class="current">JavaScript</a></li>
 				<li><a href="/Javablog/list.jsp">JavaEE</a></li>
 				<li><a href="/Javablog/list.jsp">JavaSE</a></li>
 				<li><a href="/Javablog/list.jsp">HTML/CSS</a></li>

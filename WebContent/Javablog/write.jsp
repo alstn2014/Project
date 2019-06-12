@@ -3,7 +3,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <%
-	Admin admin= (Admin)request.getSession().getAttribute("admin");
 	Board board = new Board();
 %>
 

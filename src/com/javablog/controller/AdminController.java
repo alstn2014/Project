@@ -1,5 +1,7 @@
 package com.javablog.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,16 +12,22 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.javablog.model.domain.Admin;
 import com.javablog.model.service.AdminService;
+import com.javablog.model.service.BoardService;
 
 @Controller
 public class AdminController {
 	
 	@Autowired
 	private AdminService adminService;
+	@Autowired
+	private BoardService boardService;
 	
 	@RequestMapping(value="/")
 	public String goMain(HttpServletRequest request) {
 		System.out.println("AdminController>> goMain Á¢¼Ó"); 
+		List boardList=boardService.selectAll();
+		System.out.println(boardList.size()); 
+		request.getSession().setAttribute("boardList", boardList);
 		return "index";
 	}
 	

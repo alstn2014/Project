@@ -41,7 +41,7 @@
 </head>
 <script>
 function loadSingle(){
-	location.href="/Javablog/single.html";
+	location.href="/Javablog/single.jsp";
 }
 </script>
 

@@ -34,15 +34,16 @@ public class BoardController{
       return mav;
    }      
 
-    //게시물 1건 상세보기
+ //게시물 1건 상세보기
    @RequestMapping(value="/admin/board/detail", method=RequestMethod.GET)
    public ModelAndView detail(int board_id) {
+     System.out.println("넘겨준 board_id "+board_id);
       Board board=boardService.select(board_id);
       ModelAndView mav=new ModelAndView();
-      mav.setViewName("admin/board/detail");
+      mav.setViewName("Javablog/detail");
       mav.addObject("board", board);
       return mav;
-   }      
+   }            
    //게시물 수정
    @RequestMapping(value="/admin/board/edit", method=RequestMethod.POST)
    public ModelAndView edit(Board board) {

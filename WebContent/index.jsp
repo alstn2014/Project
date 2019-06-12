@@ -87,7 +87,7 @@ function logout(){
                         <div class="entry-content relative">
                             <div class="content-1170 center-relative">
                                 <h2 class="entry-title">
-                                    <a href="/Javablog/single.html">I like to reinvent myself</a>
+                                    <a href="/Javablog/single.jsp">I like to reinvent myself</a>
                                 </h2>
                                 <div class="cat-links">
                                     <ul>
@@ -107,7 +107,7 @@ function logout(){
                         <div class="entry-content relative">
                             <div class="content-1170 center-relative">
                                 <h2 class="entry-title">
-                                    <a href="/Javablog/single.html">Everything is design</a>
+                                    <a href="/Javablog/single.jsp">Everything is design</a>
                                 </h2>
                                 <div class="cat-links">
                                     <ul>
@@ -128,7 +128,7 @@ function logout(){
                         <div class="entry-content relative">
                             <div class="content-1170 center-relative">
                                 <h2 class="entry-title">
-                                    <a href="/Javablog/single.html">It’s all about experience</a>
+                                    <a href="/Javablog/single.jsp">It’s all about experience</a>
                                 </h2>
                                 <div class="cat-links">
                                     <ul>
@@ -170,7 +170,7 @@ function logout(){
                         <div class="entry-content relative">
                             <div class="content-1170 center-relative">
                                 <h2 class="entry-title">
-                                    <a href="/Javablog/single.html">Support human activity</a>
+                                    <a href="/Javablog/single.jsp">Support human activity</a>
                                 </h2>
                                 <div class="cat-links">
                                     <ul>

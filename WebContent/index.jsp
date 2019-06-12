@@ -28,27 +28,9 @@
 		 
     </head>
 
-<script>
-function login(){
-	location.href="/Javablog/login.jsp";
-}
-function logout(){
-	location.href="/admin/logout";
-}
-</script>
+
 
     <body class="home blog">
-
-        <!-- Preloader Gif -->
-        <table class="doc-loader">
-            <tbody>
-                <tr>
-                    <td>
-                        <img src="/Javablog/images/ajax-document-loader.gif" alt="Loading...">
-                    </td>
-                </tr>
-            </tbody>
-        </table>
 
         <!-- Left Sidebar 사이드바 안에 admin 보유중 -->
         <%@include file="/Javablog/include/leftsidebar.jsp" %>

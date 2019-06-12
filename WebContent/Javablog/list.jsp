@@ -41,26 +41,15 @@
 
 </head>
 <script>
-
 function goDetail(board_id){
-	location.href="/admin/board/detail?board_id="+board_id;
-}
-
+	   location.href="/admin/board/detail?board_id="+board_id;
+	}
 
 </script>
 
     <body class="single-post">
-	
-        <!-- Preloader Gif -->
-        <table class="doc-loader">
-            <tbody>
-                <tr>
-                    <td>
-                        <img src="/Javablog/images/ajax-document-loader.gif" alt="Loading...">
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+
+        
 		
 		<!-- Left Sidebar 사이드바 안에 admin 보유중 -->
        <%@include file="/Javablog/include/leftsidebar.jsp" %>
@@ -75,6 +64,7 @@ function goDetail(board_id){
                     <div class="entry-content">
 						<div class="w3-container">
 						  <h2>글목록</h2>
+
 						  <table class="w3-table-all w3-hoverable">
 							<thead>
 							  <tr class="w3-light-grey">
@@ -114,11 +104,13 @@ function goDetail(board_id){
 						              <%} %>
 						         </td>
 						    </tr>
+							<%if(admin!=null){ %>
 							<tr>
 								<td colspan="3">
-									<button type="button" class="btn btn-secondary" onClick="goRegist()">글등록</button>
+									<button type="button" class="btn btn-secondary"><a href="/admin/board/writepage">글등록</a></button>
 								</td>
 							</tr>
+							<%} %>
 						  </table>
 						</div>
                     </div>
@@ -134,7 +126,7 @@ function goDetail(board_id){
 
         <!--Load JavaScript-->
         <%@include file="/Javablog/include/javascript.jsp"%>
-       
+        
     </body>
 </html>
 

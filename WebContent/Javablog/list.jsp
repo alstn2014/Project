@@ -45,6 +45,16 @@ function goDetail(board_id){
 	   location.href="/admin/board/detail?board_id="+board_id;
 	}
 
+function boardDelete(board_id){
+	$.ajax({
+		url:"/admin/board/delete/"+board_id,
+		type:"delete",
+		success:function(){
+			location.reload();
+		}
+	});
+}
+
 </script>
 
     <body class="single-post">
@@ -81,7 +91,10 @@ function goDetail(board_id){
 								<tr onClick="goDetail(<%=board.getBoard_id() %>)">
 								  <td><%=num-- %></td>
 								  <td><%=board.getTitle() %></td>
-								  <td><%=board.getRegdate().substring(0, 10) %></td>
+								  <td><%=board.getRegdate().substring(0, 10) %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								  <%if(admin!=null){ %>
+								  <button onClick="boardDelete(<%=board.getBoard_id()%>)">삭제</button></td>
+								  <%} %>
 								</tr>
 							<%} %>
 							<tr>

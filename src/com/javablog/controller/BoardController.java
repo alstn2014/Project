@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import com.javablog.commons.Pager;
 import com.javablog.model.domain.Board;
@@ -56,8 +57,9 @@ public class BoardController{
       return mav;
    }
    //게시물 삭제
-   @RequestMapping(value="/admin/board/delete", method=RequestMethod.GET)
-   public String del(int board_id) {
+   @RequestMapping(value="/admin/board/delete/{board_id}", method=RequestMethod.DELETE)
+   @ResponseBody
+   public String del(@PathVariable("board_id") int board_id) {
       boardService.delete(board_id);
       return "redirect:/admin/board/list";
    }

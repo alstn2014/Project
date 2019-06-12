@@ -6,6 +6,7 @@
 	Pager pager=(Pager)request.getAttribute("pager");   
 	List<Board> boardList = (List)request.getAttribute("boardList");
 %>
+
 <!DOCTYPE HTML>
 <html lang="en-US">
 <head>
@@ -40,26 +41,15 @@
 
 </head>
 <script>
-function goDetail(board_id){
-	location.href="/admin/board/detail?board_id="+board_id;
-}
+
 </script>
 
     <body class="single-post">
 
-        <!-- Preloader Gif -->
-        <table class="doc-loader">
-            <tbody>
-                <tr>
-                    <td>
-                        <img src="/Javablog/images/ajax-document-loader.gif" alt="Loading...">
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        
 		
 		<!-- Left Sidebar 사이드바 안에 admin 보유중 -->
-        <%@include file="/Javablog/include/leftsidebar.jsp" %>
+       <%@include file="/Javablog/include/leftsidebar.jsp" %>
         <!-- Left Sidebar end -->
 		
         <!-- Single Content -->
@@ -85,10 +75,10 @@ function goDetail(board_id){
    							 <%for(int i=0;i<pager.getPageSize();i++){ %>
    							    <%if(num<1)break; %>
    							    <%Board board=boardList.get(curPos++); %>
-								<tr onClick="goDetail(<%=board.getBoard_id()%>)">
+								<tr onClick="loadSingle()">
 								  <td><%=num-- %></td>
 								  <td><%=board.getTitle() %></td>
-								  <td><%=board.getRegdate() %></td>
+								  <td><%=board.getRegdate().substring(0, 10) %></td>
 								</tr>
 							<%} %>
 							<tr>
@@ -111,11 +101,13 @@ function goDetail(board_id){
 						              <%} %>
 						         </td>
 						    </tr>
+							<%if(admin!=null){ %>
 							<tr>
 								<td colspan="3">
-									<button type="button" class="btn btn-secondary"><a href="/admin/board/writepage">글등록</a></button>
+									<button type="button" class="btn btn-secondary">글등록</button>
 								</td>
 							</tr>
+							<%} %>
 						  </table>
 						</div>
                     </div>

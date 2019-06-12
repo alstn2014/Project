@@ -68,15 +68,6 @@ public class BoardController{
       boardService.insert(board);
      return "redirect:/admin/board/list";
    }
-
-
 }
-
-
-
-
-
-
-
 
 

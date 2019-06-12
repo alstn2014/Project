@@ -33,19 +33,8 @@
 
     <body class="single-post">
 
-        <!-- Preloader Gif -->
-        <table class="doc-loader">
-            <tbody>
-                <tr>
-                    <td>
-                        <img src="/Javablog/images/ajax-document-loader.gif" alt="Loading...">
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-
         <!-- Left Sidebar -->
-      <%@include file="/Javablog/include/leftsidebar.jsp" %>
+      <%@include file="/WEB-INF/Javablog/include/leftsidebar.jsp" %>
       <!-- Left Sidebar end -->
 
         <!-- Single Content -->

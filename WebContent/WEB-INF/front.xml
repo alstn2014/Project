@@ -18,7 +18,7 @@
 
 	<!-- viewResolver -->
 	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"
-	p:prefix="/"
+	p:prefix="/WEB-INF/"
 	p:suffix=".jsp"/>
 	
 	<mvc:default-servlet-handler/>

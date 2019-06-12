@@ -33,7 +33,7 @@
     <body class="home blog">
 
         <!-- Left Sidebar 사이드바 안에 admin 보유중 -->
-        <%@include file="/Javablog/include/leftsidebar.jsp" %>
+        <%@include file="/WEB-INF/Javablog/include/leftsidebar.jsp" %>
         <!-- Left Sidebar end -->
 
         <!-- Home Content -->
@@ -180,7 +180,7 @@
         </div>
 
         <!--Load JavaScript-->
-        <%@include file="/Javablog/include/javascript.jsp"%>
+        <%@include file="/WEB-INF/Javablog/include/javascript.jsp"%>
         
     </body>
 </html>

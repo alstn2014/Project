@@ -26,6 +26,8 @@ function logout(){
 	</tbody>
 </table>
 
+
+
 <div id="sidebar" class="sidebar">
 	<div class="menu-left-part">
 

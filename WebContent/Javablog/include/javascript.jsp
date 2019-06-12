@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
-		<script type="text/javascript" src="Javablog/js/jquery.js"></script>
+<%@page import="com.javablog.model.domain.Admin"%>
+		<script type="text/javascript" src="/Javablog/js/jquery.js"></script>
         <script type='text/javascript' src='/Javablog/js/imagesloaded.pkgd.js'></script>
         <script type='text/javascript' src='/Javablog/js/jquery.nicescroll.min.js'></script>
         <script type='text/javascript' src='/Javablog/js/jquery.smartmenus.min.js'></script>

@@ -73,9 +73,7 @@ input[type=button]:hover {
     <label>제목 입력</label>
     <input type="text" id="title" name="title" placeholder="title">
     <label>내용입력</label>
-	   	<textarea  id="editor" name="content" style="height:200px">
-	   		
-	    </textarea>
+	   	<textarea  id="editor" name="content" style="height:200px"></textarea>
 	    
 	
    <!-- https://ckeditor.com/docs/ckeditor5/latest/framework/guides/deep-dive/upload-adapter.html

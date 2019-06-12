@@ -1,6 +1,6 @@
 <%@page import="com.javablog.model.domain.Board"%>
 <%@page import="com.javablog.model.domain.Admin"%>
-<%@page contentType="text/html; charset=utf-8" %>
+<%@page contentType="text/html; charset=UTF-8" %>
 
 <%
    Board board=(Board)request.getAttribute("board");

@@ -41,6 +41,9 @@
 
 </head>
 <script>
+function goDetail(board_id){
+	   location.href="/admin/board/detail?board_id="+board_id;
+	}
 
 </script>
 
@@ -75,7 +78,7 @@
    							 <%for(int i=0;i<pager.getPageSize();i++){ %>
    							    <%if(num<1)break; %>
    							    <%Board board=boardList.get(curPos++); %>
-								<tr onClick="loadSingle()">
+								<tr onClick="goDetail(<%=board.getBoard_id() %>)">
 								  <td><%=num-- %></td>
 								  <td><%=board.getTitle() %></td>
 								  <td><%=board.getRegdate().substring(0, 10) %></td>
@@ -104,7 +107,7 @@
 							<%if(admin!=null){ %>
 							<tr>
 								<td colspan="3">
-									<button type="button" class="btn btn-secondary">글등록</button>
+									<button type="button" class="btn btn-secondary"><a href="/admin/board/writepage">글등록</a></button>
 								</td>
 							</tr>
 							<%} %>

@@ -6,6 +6,7 @@
 	Pager pager=(Pager)request.getAttribute("pager");   
 	List<Board> boardList = (List)request.getAttribute("boardList");
 %>
+
 <!DOCTYPE HTML>
 <html lang="en-US">
 <head>
@@ -59,7 +60,7 @@ function loadSingle(){
         </table>
 		
 		<!-- Left Sidebar 사이드바 안에 admin 보유중 -->
-        <%@include file="/Javablog/include/leftsidebar.jsp" %>
+       <%@include file="/Javablog/include/leftsidebar.jsp" %>
         <!-- Left Sidebar end -->
 		
         <!-- Single Content -->
@@ -88,7 +89,7 @@ function loadSingle(){
 								<tr onClick="loadSingle()">
 								  <td><%=num-- %></td>
 								  <td><%=board.getTitle() %></td>
-								  <td><%=board.getRegdate() %></td>
+								  <td><%=board.getRegdate().substring(0, 10) %></td>
 								</tr>
 							<%} %>
 							<tr>

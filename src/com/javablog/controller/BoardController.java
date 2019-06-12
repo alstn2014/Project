@@ -6,11 +6,11 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-
 import com.javablog.commons.Pager;
 import com.javablog.model.domain.Board;
 import com.javablog.model.service.BoardService;
@@ -66,6 +66,14 @@ public class BoardController{
       boardService.insert(board);
      return "redirect:/admin/board/list";
    }
+   
+   //게시물 등록 페이지 이동
+   @RequestMapping(value="/admin/board/writepage",method=RequestMethod.GET)
+	public ModelAndView insertPage(HttpServletRequest request) {
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("Javablog/write");
+		return mav;	
+	}
 }
 
 

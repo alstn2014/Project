@@ -51,7 +51,7 @@
 
 	<div class="menu-right-part">
 		<div class="logo-holder">
-			<a href="/index.jsp"> 
+			<a href="/">
 				<img src="/Javablog/images/logo.png"	alt="Suppablog WP">
 			</a>
 		</div>

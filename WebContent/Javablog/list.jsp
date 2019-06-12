@@ -57,50 +57,11 @@ function loadSingle(){
                 </tr>
             </tbody>
         </table>
-
-        <!-- Left Sidebar -->
-        <div id="sidebar" class="sidebar">
-			<div class="menu-left-part">
-				<div class="search-holder">
-					<label>
-						<input type="search" class="search-field" placeholder="검색어를 입력하세요..." value="" name="s" title="Search for:">
-					</label>
-				</div>
-				<div class="site-info-holder">
-					<h1 class="site-title">Java Blog</h1>
-					<p class="site-description">
-						자바 블로그는 친절한 글과 이미지를 결합하여 개발의 초보자에게도 쉽게 설명합니다.
-					</p>
-				</div>
-				<nav id="header-main-menu">
-					<ul class="main-menu sm sm-clean">
-						<li><a href="/admin/board/list" class="current">JavaScript</a></li>
-						<li><a href="/admin/board/list">JavaEE</a></li>
-						<li><a href="/admin/board/list">JavaSE</a></li>
-						<li><a href="/admin/board/list">HTML/CSS</a></li>
-						<li><a href="/admin/board/list">개발환경</a></li>
-					</ul>
-				</nav>
-			</div>
-
-			<div class="menu-right-part">
-				<div class="logo-holder">
-					<a href="/">
-						<img src="/Javablog/images/logo.png" alt="Suppablog WP">
-					</a>
-				</div>
-				<div class="toggle-holder">
-					<div id="toggle">
-						<div class="menu-line"></div>
-					</div>
-				</div>
-				
-				<div class="fixed scroll-top"><i class="fa fa-caret-square-o-up" aria-hidden="true"></i></div>
-			</div>
-
-			<div class="clear"></div>
-		</div>
-
+		
+		<!-- Left Sidebar 사이드바 안에 admin 보유중 -->
+        <%@include file="/Javablog/include/leftsidebar.jsp" %>
+        <!-- Left Sidebar end -->
+		
         <!-- Single Content -->
         <div id="content" class="site-content center-relative">
             <div class="single-post-wrapper content-1070 center-relative">
@@ -169,15 +130,8 @@ function loadSingle(){
 
 
         <!--Load JavaScript-->
-        <script type="text/javascript" src="/Javablog/js/jquery.js"></script>
-        <script type='text/javascript' src='/Javablog/js/imagesloaded.pkgd.js'></script>
-        <script type='text/javascript' src='/Javablog/js/jquery.nicescroll.min.js'></script>
-        <script type='text/javascript' src='/Javablog/js/jquery.smartmenus.min.js'></script>
-        <script type='text/javascript' src='/Javablog/js/jquery.carouFredSel-6.0.0-packed.js'></script>
-        <script type='text/javascript' src='/Javablog/js/jquery.mousewheel.min.js'></script>
-        <script type='text/javascript' src='/Javablog/js/jquery.touchSwipe.min.js'></script>
-        <script type='text/javascript' src='/Javablog/js/jquery.easing.1.3.js'></script>
-        <script type='text/javascript' src='/Javablog/js/main.js'></script>
+        <%@include file="/Javablog/include/javascript.jsp"%>
+        
     </body>
 </html>
 

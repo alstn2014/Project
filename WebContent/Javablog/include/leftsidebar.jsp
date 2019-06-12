@@ -21,11 +21,11 @@
 		</div>
 		<nav id="header-main-menu">
 			<ul class="main-menu sm sm-clean">
-				<li><a href="/admin/board/list" class="current">JavaScript</a></li>
-				<li><a href="/Javablog/list.jsp">JavaEE</a></li>
-				<li><a href="/Javablog/list.jsp">JavaSE</a></li>
-				<li><a href="/Javablog/list.jsp">HTML/CSS</a></li>
-				<li><a href="/Javablog/list.jsp">개발환경</a></li>
+				<li><a href="/admin/board/list" class="current">Java의 모든 것</a></li>
+				<li>.</li>
+				<li>.</li>
+				<li>.</li>
+				<li>.</li>
 				<li>.</li>
 				<li>.</li>
 				<li>.</li>

@@ -69,7 +69,7 @@
                     </article>
 
 					<%if(boardList!=null){ %>
-						<%for(int i=0;i<boardList.size();i++){ %>
+						<%for(int i=0;i<5;i++){ %>
 							<%Board board= boardList.get(i); %>
 		                    <article id="post-2" class="blog-item-holder">
 		                        <div class="entry-content relative">

@@ -36,7 +36,7 @@ function logout(){
 		</div>
 		<div class="site-info-holder">
 			<h1 class="site-title">Java Blog</h1>
-			<p class="site-description">자바 블로그는 친절한 글과 이미지를 결합하여 개발의 초보자에게도
+			<p class="site-description">자바 블로그는 친절한 글로 자세한 설명을 곁들여 개발의 초보자에게도
 				쉽게 설명합니다.</p>
 		</div>
 		<nav id="header-main-menu">

@@ -1,5 +1,12 @@
+<%@page import="java.util.Collections"%>
+<%@page import="com.javablog.model.domain.Board"%>
+<%@page import="java.util.List"%>
 <%@page import="com.javablog.model.domain.Admin"%>
 <%@ page contentType="text/html; charset=UTF-8"%>
+<%
+	List<Board> boardList=(List)request.getAttribute("boardList");
+%>
+
 <!DOCTYPE HTML>
 <html lang="en-US">
     <head>
@@ -23,12 +30,13 @@
                 <script src="js/html5.js"></script>
         <![endif]-->
 		
+		<!-- JQuery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+		
 		<!-- 버튼 관련 양식 -->	
 		 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 		 
     </head>
-
-
 
     <body class="home blog">
 
@@ -45,132 +53,39 @@
                     <article id="post-1" class="blog-item-holder featured-post">
                         <div class="entry-content relative">
                             <div class="content-1170 center-relative">
-                                <div class="cat-links">
-                                    <ul>
-                                        <li>
-                                            <a href="#">Crafting</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="entry-date published">February 12, 2016</div>
+                            	<%if(boardList!=null){ %>
+                                <div class="entry-date published"><%=boardList.get(0).getRegdate().substring(0,10) %></div>
                                 <h2 class="entry-title">
-                                    <a href="/Javablog/single.html">Whatever is begun in anger ends in shame</a>
+                                    <a href="/admin/board/detail?board_id=<%=boardList.get(0).getBoard_id()%>"><%=boardList.get(0).getTitle() %></a>
                                 </h2>
                                 <div class="excerpt">
-                                    Now when I had mastered the language of this water and had come to know every trifling feature that bordered the great river as familiarly as I knew the letters of the alphabet, I had made a valuable acquisition. I still keep in mind a certain wonderful sunset which I witnessed when and steamboating<a class="read-more" href="single.html"></a>
+                                	<%=boardList.get(0).getContent().substring(0, 50) %>
+                                   <a class="read-more" href="/admin/board/detail?board_id=<%=boardList.get(0).getBoard_id()%>"></a>
                                 </div>
+                                <%} %>
                                 <div class="clear"></div>
                             </div>
                         </div>
                     </article>
 
-
-                    <article id="post-2" class="blog-item-holder">
-                        <div class="entry-content relative">
-                            <div class="content-1170 center-relative">
-                                <h2 class="entry-title">
-                                    <a href="/Javablog/single.jsp">I like to reinvent myself</a>
-                                </h2>
-                                <div class="cat-links">
-                                    <ul>
-                                        <li>
-                                            <a href="#">Science</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="entry-date published">February 12, 2016</div>
-                                <div class="clear"></div>
-                            </div>
-                        </div>
-                    </article>
+					<%if(boardList!=null){ %>
+						<%for(int i=0;i<boardList.size();i++){ %>
+							<%Board board= boardList.get(i); %>
+		                    <article id="post-2" class="blog-item-holder">
+		                        <div class="entry-content relative">
+		                            <div class="content-1170 center-relative">
+		                                <h2 class="entry-title">
+		                                    <a href="/admin/board/detail?board_id=<%=board.getBoard_id()%>"><%=board.getTitle() %></a>
+		                                </h2>
+		                                <div class="entry-date published"><%=board.getRegdate().substring(0,10) %></div>
+		                                <div class="clear"></div>
+		                            </div>
+		                        </div>
+		                    </article>
+	                    <%} %>
+                    <%} %>
 
 
-                    <article id="post-3" class="blog-item-holder">
-                        <div class="entry-content relative">
-                            <div class="content-1170 center-relative">
-                                <h2 class="entry-title">
-                                    <a href="/Javablog/single.jsp">Everything is design</a>
-                                </h2>
-                                <div class="cat-links">
-                                    <ul>
-                                        <li>
-                                            <a href="#">Art</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="entry-date published">February 12, 2016</div>
-                                <div class="clear"></div>
-                            </div>
-                        </div>
-                    </article>
-
-
-
-                    <article id="post-4" class="blog-item-holder">
-                        <div class="entry-content relative">
-                            <div class="content-1170 center-relative">
-                                <h2 class="entry-title">
-                                    <a href="/Javablog/single.jsp">It’s all about experience</a>
-                                </h2>
-                                <div class="cat-links">
-                                    <ul>
-                                        <li>
-                                            <a href="#">Life</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="entry-date published">February 12, 2016</div>
-                                <div class="clear"></div>
-                            </div>
-                        </div>
-                    </article>
-
-
-
-                    <article id="post-5" class="blog-item-holder">
-                        <div class="entry-content relative">
-                            <div class="content-1170 center-relative">
-                                <h2 class="entry-title">
-                                    <a href="/Javablog/single.html">This is not my code</a>
-                                </h2>
-                                <div class="cat-links">
-                                    <ul>
-                                        <li>
-                                            <a href="#">Coding</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="entry-date published">February 12, 2016</div>
-                                <div class="clear"></div>
-                            </div>
-                        </div>
-                    </article>
-
-
-
-                    <article id="post-6" class="blog-item-holder">
-                        <div class="entry-content relative">
-                            <div class="content-1170 center-relative">
-                                <h2 class="entry-title">
-                                    <a href="/Javablog/single.jsp">Support human activity</a>
-                                </h2>
-                                <div class="cat-links">
-                                    <ul>
-                                        <li>
-                                            <a href="#">Advocacy</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="entry-date published">February 12, 2016</div>
-                                <div class="clear"></div>
-                            </div>
-                        </div>
-                    </article>
-
-                </div>
-                <div class="clear"></div>
-              
-            </div>
 
             <div class="featured-image-holder">
                 <div class="featured-post-image" style="background-image: url(/Javablog/images/javablog.png); background-position: center; background-size: auto; background-repeat: no-repeat"></div>

@@ -68,17 +68,6 @@
                                 var slider1_pagination = "true";
                                 var slider1_hover = "true";
                             </script>
-                            <div class="image-slider-wrapper">
-                                <div class="caroufredsel_wrapper">
-                                    <ul id="slider1" class="image-slider slides center-text">
-                                        <li><img src="/Javablog/demo-images/01_blogpost_galery.jpg" alt=""></li>
-                                        <li><img src="/Javablog/demo-images/02_blogpost_galery.jpg" alt=""></li>
-                                        <li><img src="/Javablog/demo-images/03_blogpost_galery.jpg" alt=""></li>
-                                    </ul>
-                                </div>
-                                <div class="slider1_pagination carousel_pagination left"></div>
-                                <div class="clear"></div>
-                            </div>
                             <div class="clear"></div>
                         </div>
                     </div>

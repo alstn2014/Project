@@ -7,6 +7,9 @@
 
 <meta charset="UTF-8">
 
+<!-- 버튼 관련 양식 -->	
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
 <script>
 function login(){
 	location.href="/admin/login";

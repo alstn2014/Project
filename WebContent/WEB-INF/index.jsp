@@ -69,19 +69,36 @@
                     </article>
 
 					<%if(boardList!=null){ %>
-						<%for(int i=0;i<5;i++){ %>
-							<%Board board= boardList.get(i); %>
-		                    <article id="post-2" class="blog-item-holder">
-		                        <div class="entry-content relative">
-		                            <div class="content-1170 center-relative">
-		                                <h2 class="entry-title">
-		                                    <a href="/admin/board/detail?board_id=<%=board.getBoard_id()%>"><%=board.getTitle() %></a>
-		                                </h2>
-		                                <div class="entry-date published"><%=board.getRegdate().substring(0,10) %></div>
-		                                <div class="clear"></div>
-		                            </div>
-		                        </div>
-		                    </article>
+						<%if(boardList.size()>=5){ %>
+							<%for(int i=0;i<5;i++){ %>
+								<%Board board= boardList.get(i); %>
+			                    <article id="post-2" class="blog-item-holder">
+			                        <div class="entry-content relative">
+			                            <div class="content-1170 center-relative">
+			                                <h2 class="entry-title">
+			                                    <a href="/admin/board/detail?board_id=<%=board.getBoard_id()%>"><%=board.getTitle() %></a>
+			                                </h2>
+			                                <div class="entry-date published"><%=board.getRegdate().substring(0,10) %></div>
+			                                <div class="clear"></div>
+			                            </div>
+			                        </div>
+			                    </article>
+		                    <%} %>
+	                    <%}else{ %>
+	                    	<%for(int i=0;i<boardList.size();i++){ %>
+								<%Board board= boardList.get(i); %>
+			                    <article id="post-2" class="blog-item-holder">
+			                        <div class="entry-content relative">
+			                            <div class="content-1170 center-relative">
+			                                <h2 class="entry-title">
+			                                    <a href="/admin/board/detail?board_id=<%=board.getBoard_id()%>"><%=board.getTitle() %></a>
+			                                </h2>
+			                                <div class="entry-date published"><%=board.getRegdate().substring(0,10) %></div>
+			                                <div class="clear"></div>
+			                            </div>
+			                        </div>
+			                    </article>
+		                    <%} %>
 	                    <%} %>
                     <%} %>
 

@@ -59,7 +59,7 @@
                                     <a href="/admin/board/detail?board_id=<%=boardList.get(0).getBoard_id()%>"><%=boardList.get(0).getTitle() %></a>
                                 </h2>
                                 <div class="excerpt">
-                                	<%=boardList.get(0).getContent() %>
+                                	<%=boardList.get(0).getContent().substring(0, 30) %>
                                    <a class="read-more" href="/admin/board/detail?board_id=<%=boardList.get(0).getBoard_id()%>"></a>
                                 </div>
                                 <%} %>

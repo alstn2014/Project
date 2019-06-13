@@ -3,7 +3,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <%
-	Board board = new Board();
+   Board board = new Board();
 %>
 
 
@@ -12,21 +12,24 @@
 <head>
 <meta content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<script src="https://cdn.ckeditor.com/ckeditor5/12.1.0/classic/ckeditor.js"></script>
+<script src="https://cdn.ckeditor.com/4.11.3/standard/ckeditor.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 <script>
+   
+   
 $(function(){
-	   $($("input[type='button']")[0]).click(function(){
-	      regist();
-	   });
-	});
-	function regist(){
-	   $("form").attr({
-	      method:"post",
-	      action:"/admin/board/write"
-	   });
-	   $("form").submit();
-	}
+        CKEDITOR.replace('content');
+      $($("input[type='button']")[0]).click(function(){
+         regist();
+      });
+   });
+   function regist(){
+      $("form").attr({
+         method:"post",
+         action:"/admin/board/write"
+      });
+      $("form").submit();
+   }
 </script>
 <style>
 body {font-family: Arial, Helvetica, sans-serif;}
@@ -73,20 +76,30 @@ input[type=button]:hover {
     <label>제목 입력</label>
     <input type="text" id="title" name="title" placeholder="title">
     <label>내용입력</label>
-	   	<textarea  id="editor" name="content" style="height:200px"></textarea>
-	    
-	
+         <textarea  id="editor" name="content" style="height:600px"></textarea>
+           <!-- <script>
+                        ClassicEditor
+                                .create( document.querySelector( '#editor' ) )
+                                .then( editor => {
+                                        console.log( editor );
+                                } )
+                                .catch( error => {
+                                        console.error( error );
+                                } );
+                </script> -->
+       
+   
    <!-- https://ckeditor.com/docs/ckeditor5/latest/framework/guides/deep-dive/upload-adapter.html
-   			https://ckeditor.com/docs/ckeditor5/latest/builds/guides/integration/saving-data.html
-			https://ckeditor.com/docs/ckeditor5/latest/framework/guides/deep-dive/upload-adapter.html
-			
-			
-			https://huskdoll.tistory.com/121
-			https://pkbad.tistory.com/28
-			https://lalwr.blogspot.com/2018/09/ckeditor-spring.html
-			https://zzznara2.tistory.com/443
+            https://ckeditor.com/docs/ckeditor5/latest/builds/guides/integration/saving-data.html
+         https://ckeditor.com/docs/ckeditor5/latest/framework/guides/deep-dive/upload-adapter.html
+         
+         
+         https://huskdoll.tistory.com/121
+         https://pkbad.tistory.com/28
+         https://lalwr.blogspot.com/2018/09/ckeditor-spring.html
+         https://zzznara2.tistory.com/443
     -->
-    	<!-- <textarea id="subject" name="subject"  style="height:200px"></textarea> -->
+       <!-- <textarea id="subject" name="subject"  style="height:200px"></textarea> -->
 
     <input type="button" value="글쓰기">
   </form>

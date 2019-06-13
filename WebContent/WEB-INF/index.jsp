@@ -53,7 +53,7 @@
                     <article id="post-1" class="blog-item-holder featured-post">
                         <div class="entry-content relative">
                             <div class="content-1170 center-relative">
-                            	<%if(boardList!=null){ %>
+                            	<%if(boardList.size()!=0){ %>
                                 <div class="entry-date published"><%=boardList.get(0).getRegdate().substring(0,10) %></div>
                                 <h2 class="entry-title">
                                     <a href="/admin/board/detail?board_id=<%=boardList.get(0).getBoard_id()%>"><%=boardList.get(0).getTitle() %></a>

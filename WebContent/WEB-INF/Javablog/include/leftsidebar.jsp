@@ -77,7 +77,7 @@ function logout(){
 
 	<div class="menu-right-part">
 		<div class="logo-holder">
-			<a href="/main"> <img src="/Javablog/images/logo.png"
+			<a href="/"> <img src="/Javablog/images/logo.png"
 				alt="Suppablog WP">
 			</a>
 		</div>
